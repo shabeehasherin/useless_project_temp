@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Percentage Analyzer (Over-Analysis Engine)</title>
+    <meta name="description" content="Reads your battery % and provides deep, absurd, and existential over-analysis with live charts and shareable diagnostics.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas for Interactive Quantum Particles -->
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="app-wrapper">
+        <!-- Top Navbar -->
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i data-lucide="zap"></i>
+                </div>
+                <div>
+                    <h1 class="brand-title">Battery Percentage Analyzer</h1>
+                </div>
+                <span class="brand-tag">v2.4 OVER-ANALYSIS</span>
+            </div>
+            
+            <div class="header-controls">
+                <div class="theme-selector-wrapper">
+                    <i data-lucide="palette" style="width:14px; vertical-align:middle; margin-right:4px; color:var(--theme-color);"></i>
+                    <select id="theme-select" class="theme-select-dropdown" title="Change Visual Theme Style">
+                        <option value="white" selected>⚪ Clean Pearl White</option>
+                        <option value="cyberpunk">🌌 Cyberpunk Quantum</option>
+                        <option value="vaporwave">🍓 Pastel Vaporwave</option>
+                        <option value="nordic">🌿 Nordic Forest Mint</option>
+                        <option value="synthwave">⚡ Synthwave Hotline</option>
+                    </select>
+                </div>
+                <div class="live-badge" id="live-status-badge">
+                    <span class="live-dot"></span>
+                    <span id="battery-source-text">SIMULATED CORE</span>
+                </div>
+                <button class="btn-icon" id="btn-toggle-sound" title="Toggle Sound FX">
+                    <i data-lucide="volume-2" id="sound-icon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Workspace Grid -->
+        <main class="main-grid">
+            <!-- Left Panel: Interactive Dial & Controls -->
+            <section class="battery-core-card">
+                <div class="scanner-line" id="scanner"></div>
+
+                <div class="dial-container">
+                    <svg class="dial-svg" viewBox="0 0 220 220">
+                        <circle class="dial-bg" cx="110" cy="110" r="95"></circle>
+                        <circle class="dial-meter" id="dial-progress" cx="110" cy="110" r="95"></circle>
+                    </svg>
+                    <div class="dial-inner">
+                        <div class="pct-value">
+                            <span id="display-pct">47</span><span class="pct-symbol">%</span>
+                        </div>
+                        <div class="status-badge-pill" id="badge-pill">FALSE SECURITY ZONE</div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>Adjust Charge Level</span>
+                            <span id="slider-val-label">47%</span>
+                        </div>
+                        <input type="range" id="battery-slider" class="battery-slider" min="0" max="100" value="47">
+                    </div>
+
+                    <!-- Presets -->
+                    <div class="preset-pills">
+                        <button class="preset-btn" data-pct="100">100% (Perfectionist)</button>
+                        <button class="preset-btn" data-pct="47">47% (Mid-Life)</button>
+                        <button class="preset-btn" data-pct="12">12% (Panic)</button>
+                        <button class="preset-btn" data-pct="1">1% (Quantum)</button>
+                    </div>
+
+                    <!-- Toggles -->
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i data-lucide="plug" style="width:14px; vertical-align:middle; margin-right:4px;"></i> Connected to Charger</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-charging">
+                            <span class="slider-toggle"></span>
+                        </label>
+                    </div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i data-lucide="shield-alert" style="width:14px; vertical-align:middle; margin-right:4px;"></i> Low Power Mode Active</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-lowpower">
+                            <span class="slider-toggle"></span>
+                        </label>
+                    </div>
+
+                    <button class="btn-icon" id="btn-detect-live" style="width: 100%; justify-content: center; margin-top: 8px;">
+                        <i data-lucide="refresh-cw"></i> Sync Real Battery (Web API)
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Panel: Over-Analysis Insights HUD -->
+            <section class="insights-column">
+                <!-- Headline Over-Analysis Banner -->
+                <div class="glass-card headline-card">
+                    <div class="headline-header">
+                        <i data-lucide="brain-circuit"></i> Deep Unnecessary Insight Diagnosis
+                    </div>
+                    <p class="headline-text" id="headline-insight">
+                        "At current rate, your phone will die emotionally before physically."
+                    </p>
+                </div>
+
+                <!-- Emotional vs Physical Lifespan Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-title"><i data-lucide="heart-crack" style="width:14px; margin-right:4px;"></i> Emotional Lifespan</span>
+                        <span class="stat-value" id="val-emotional-life">14 minutes</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title"><i data-lucide="clock" style="width:14px; margin-right:4px;"></i> Physical Lifespan</span>
+                        <span class="stat-value" id="val-physical-life">3h 17m</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title"><i data-lucide="activity" style="width:14px; margin-right:4px;"></i> Existential Panic Index</span>
+                        <span class="stat-value" id="val-panic-index">45 / 100</span>
+                        <div class="panic-bar-track">
+                            <div class="panic-bar-fill" id="panic-bar-fill"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title"><i data-lucide="compass" style="width:14px; margin-right:4px;"></i> Existential Mindset</span>
+                        <span class="stat-value" id="val-existential-state">Subconscious Vigilance</span>
+                    </div>
+                </div>
+
+                <!-- Phone Personality & Mood -->
+                <div class="glass-card mood-card">
+                    <div class="mood-header">
+                        <div class="mood-icon-wrapper" id="mood-icon-wrapper">
+                            <i data-lucide="meh" id="mood-icon"></i>
+                        </div>
+                        <div>
+                            <div class="mood-subtitle">CURRENT PHONE VIBE & PERSONALITY</div>
+                            <div class="mood-title" id="mood-title">Anxious Sweater</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone's Inner Monologue -->
+                <div class="monologue-box">
+                    <div style="flex:1;">
+                        <div style="font-size:0.75rem; color:var(--theme-color); font-family:var(--font-mono); font-style:normal; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+                            <i data-lucide="message-square" style="width:12px;"></i> PHONE'S INTERNAL MONOLOGUE
+                        </div>
+                        <span id="monologue-text">"Why are you opening camera right now?! Are you insane?!"</span>
+                    </div>
+                    <button class="btn-speak" id="btn-speak-monologue" title="Listen via Voice Synth">
+                        <i data-lucide="volume-2"></i> Voice
+                    </button>
+                </div>
+
+                <!-- Decision Matrix & Drain Causes -->
+                <div class="glass-card">
+                    <h2 class="section-title"><i data-lucide="bar-chart-3"></i> Life Decision Matrix vs Battery %</h2>
+                    <div class="matrix-list" id="matrix-list-container">
+                        <!-- Populated dynamically by app.js -->
+                    </div>
+                </div>
+
+                <!-- Interactive Charts -->
+                <div class="charts-grid">
+                    <div class="glass-card">
+                        <h2 class="section-title" style="font-size:0.95rem;"><i data-lucide="trending-up"></i> Panic & Sanity Trajectory</h2>
+                        <div class="chart-box">
+                            <canvas id="chart-panic"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <h2 class="section-title" style="font-size:0.95rem;"><i data-lucide="pie-chart"></i> Absurd Drain Distribution</h2>
+                        <div class="chart-box">
+                            <canvas id="chart-drain"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Absurd Optimization Advice -->
+                <div class="glass-card">
+                    <h2 class="section-title"><i data-lucide="lightbulb"></i> Recommended Absurd Actions</h2>
+                    <div class="prescription-list" id="prescription-container">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Exporter Bar -->
+        <footer class="footer-bar">
+            <div>
+                <h3 style="font-size:1.05rem; font-weight:700;">Export Existential Battery Diagnosis</h3>
+                <p style="font-size:0.82rem; color:var(--text-secondary);">Generate shareable certificate for social media or bragging rights.</p>
+            </div>
+            <button class="btn-primary" id="btn-export-certificate">
+                <i data-lucide="download"></i> Download Diagnosis Card
+            </button>
+        </footer>
+    </div>
+
+    <!-- Hidden Export Canvas -->
+    <canvas id="export-canvas" width="800" height="450"></canvas>
+
+    <!-- Application Script (ES Module) -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
