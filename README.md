@@ -2,34 +2,33 @@
 
 
 
-# [Project Name] 🎯
+# Battery Percentage Analyzer 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: NOVA
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: SHABEEHA SHERIN.C  - COLLEGE OF ENGINEERING VADAKARA
+- Member 2: DEVIKA KS - COLLEGE OF ENGINEERING VADAKARA[College]
 
 ### Project Description
-[2-3 lines about what your project does]
+A fun web app that reads battery percentage and delivers unnecessary, dramatic, and sarcastic insights instead of normal information. It transforms simple battery data into exaggerated and humorous “analysis” to entertain users.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+People check battery percentage but get boring, emotionless information. Where is the drama? Where is the overthinking?
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+We convert battery percentage into funny, exaggerated life advice and fake analysis using simple logic.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Languages used: HTML, CSS, JavaScript
+- Frameworks used: None
+- Libraries used:
+- Tools used:VS code, Antigravity
 
 For Hardware:
 - [List main components]
@@ -39,10 +38,11 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+git clone <your-repo-link>
+cd Battery-Analyzer
 
 # Run
-[commands]
+open index.html
 
 ### Project Documentation
 For Software:
@@ -58,8 +58,7 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+Input → Logic → Funny Output
 
 For Hardware:
 
@@ -89,9 +88,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+SHABEEHA SHERIN.C: UI design, JavaScript logic, idea
+DEVIKA KS: Testing, documentation, presentation
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
