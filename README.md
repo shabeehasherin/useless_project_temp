@@ -48,14 +48,13 @@ open index.html
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+[![Screenshot1](Add screenshot 1 here with proper name)
+*Add caption explaining what this shows*](https://github.com/shabeehasherin/useless_project_temp/blob/main/Useless.1.png)
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+[![Screenshot2](Add screenshot 2 here with proper name)
+*Add caption explaining what this shows*](https://github.com/shabeehasherin/useless_project_temp/blob/main/Useless.2.png)
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+
 
 # Diagrams
 Input → Logic → Funny Output
@@ -81,8 +80,8 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[[Add your demo video link here]
+*Explain what the video demonstrates*](https://github.com/shabeehasherin/useless_project_temp/blob/main/Battery%20Percentage%20Analyzer%20-%20Google%20Chrome%202026-09-04%2007-29-21.mp4)
 
 # Additional Demos
 [Add any extra demo materials/links]
