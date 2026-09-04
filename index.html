@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battery Percentage Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="panel">
+      <p class="eyebrow">Over-Analysis Tool</p>
+      <h1>Battery Percentage Analyzer</h1>
+      <p class="intro">
+        Reads your battery percentage and gives deep unnecessary insights.
+      </p>
 
+      <div class="battery-card">
+        <div class="battery-shell" role="img" aria-label="Battery percentage display">
+          <div class="battery-fill" id="batteryFill"></div>
+          <span id="batteryInsideText">0%</span>
+        </div>
+        <div class="battery-tip" aria-hidden="true"></div>
+      </div>
+
+      <div class="scale" aria-hidden="true">
+        <span>0%</span>
+        <span>25%</span>
+        <span>50%</span>
+        <span>75%</span>
+        <span>100%</span>
+      </div>
+
+      <div class="result">
+        <p id="batteryText">Battery: Checking...</p>
+        <p id="analysisText">Preparing dramatic analysis...</p>
+      </div>
+
+      <div class="fallback" id="fallbackControls" hidden>
+        <label for="manualBattery">Browser battery reading unavailable. Try manually:</label>
+        <input type="range" id="manualBattery" min="0" max="100" value="100">
+      </div>
+
+      <button id="analyzeButton" type="button">Analyze Again</button>
+
+      <section class="demo-section">
+        <h2>Try Another Battery</h2>
+        <p id="demoStatus">Demo Battery: 65%</p>
+
+        <div class="battery-card demo-card">
+          <div class="battery-shell small-battery" role="img" aria-label="Demo battery percentage display">
+            <div class="battery-fill" id="demoBatteryFill"></div>
+            <span id="demoBatteryInsideText">65%</span>
+          </div>
+          <div class="battery-tip small-tip" aria-hidden="true"></div>
+        </div>
+
+        <label for="demoBattery">Move this slider to see how the battery works:</label>
+        <input type="range" id="demoBattery" min="0" max="100" value="65">
+        <p class="demo-note" id="demoNote">
+          Width: 65%. Color: green because it is between 51% and 80%.
+        </p>
+        <p class="demo-analysis" id="demoAnalysis">
+          Demo analysis loading...
+        </p>
+      </section>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

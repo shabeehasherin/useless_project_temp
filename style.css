@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1d2329;
+  background: #ffffff;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(1100px, 100%);
+  min-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid #d8dee4;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(29, 35, 41, 0.12);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #117865;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 7vw, 6rem);
+  line-height: 1;
+}
+
+.intro {
+  max-width: 760px;
+  margin: 16px 0 28px;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.5;
+}
+
+.battery-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 18px);
+  margin: clamp(24px, 5vw, 48px) 0 10px;
+}
+
+.battery-shell {
+  position: relative;
+  width: min(780px, 78vw);
+  height: clamp(130px, 18vw, 220px);
+  padding: clamp(10px, 2vw, 18px);
+  border: clamp(5px, 0.8vw, 9px) solid #1d2329;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.battery-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 4px;
+  background: #34d399;
+  transition: width 300ms ease, background-color 300ms ease;
+}
+
+#batteryInsideText,
+#demoBatteryInsideText {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #1d2329;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.battery-tip {
+  width: clamp(22px, 4vw, 42px);
+  height: clamp(54px, 9vw, 96px);
+  border: clamp(5px, 0.8vw, 9px) solid #1d2329;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  background: #ffffff;
+}
+
+.scale {
+  width: min(780px, 78vw);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 22px;
+  color: #59636e;
+  font-size: clamp(0.82rem, 1.4vw, 1rem);
+  font-weight: 700;
+}
+
+.result {
+  min-height: 150px;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid #d8dee4;
+  border-radius: 8px;
+  background: #f6f8fa;
+}
+
+.result p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+#batteryText {
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+  font-weight: 800;
+}
+
+#analysisText {
+  margin-top: 10px;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+}
+
+.fallback {
+  margin-top: 18px;
+}
+
+.fallback label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+button {
+  margin-top: 22px;
+  min-height: 56px;
+  padding: 0 26px;
+  border: 2px solid #1d2329;
+  border-radius: 8px;
+  background: #1d2329;
+  color: #ffffff;
+  font: inherit;
+  font-size: 1.08rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.demo-section {
+  margin-top: 28px;
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid #d8dee4;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.demo-section h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.demo-section p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+#demoStatus {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.demo-card {
+  margin: 16px 0 12px;
+}
+
+.small-battery {
+  height: clamp(86px, 10vw, 132px);
+}
+
+.small-tip {
+  height: clamp(38px, 5vw, 62px);
+}
+
+.demo-section label {
+  display: block;
+  margin: 12px 0 8px;
+  font-weight: 700;
+}
+
+.demo-note {
+  margin-top: 10px;
+  color: #46515c;
+  font-weight: 700;
+}
+
+.demo-analysis {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f6f8fa;
+  color: #1d2329;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 800;
+}
+
+@media (max-width: 520px) {
+  .app {
+    padding: 12px;
+  }
+
+  .panel {
+    min-height: calc(100vh - 24px);
+    padding: 22px;
+  }
+
+  .battery-shell {
+    width: calc(100vw - 86px);
+    height: 96px;
+  }
+
+  .battery-tip {
+    width: 18px;
+    height: 40px;
+  }
+
+  .scale {
+    width: calc(100vw - 86px);
+  }
+}
