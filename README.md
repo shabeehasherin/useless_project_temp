@@ -2,11 +2,11 @@
 
 
 
-# [Project Name] 🎯
+# Battery Percentage Analyzer 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: NOVA
 
 
 ### Team Members
